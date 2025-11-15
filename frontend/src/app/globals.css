@@ -1,26 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+    @theme{
+        --color-rpg-blue-100: #009DFF;
+        --color-rpg-blue-200: #142545;
+        --color-rpg-grey-100: #B8AAAA;
+        --color-rpg-grey-200: #978E8E;
+        --color-rpg-white-100: #EAF7FF;
+        --color-rpg-red-100: #DA3E3E;
+        --color-rpg-yellow-100: #AF9C10;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+        --font-rpg-default: "Inter", serif;
+    }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
+    body {
+        background-color: #294765; /* Replace 'lightblue' with your desired color name, hex code, RGB, or HSL value */
+    }
