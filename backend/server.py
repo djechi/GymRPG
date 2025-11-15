@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from google.genai import Client
 import os
+import classes
 
 app = Flask("__name__")
 client = Client(api_key=os.getenv("GEMINI_API_KEY"))
@@ -19,6 +20,15 @@ def chatBot():
         contents = message
     )
     return jsonify({"Response": response.text})
+
+@app.route("/classes")
+def allClasses():
+    return jsonify({
+        "ranger": classes.rangerClass(),
+        "thief": classes.theifClass(),
+        "warrior": classes.warriorClass(),
+        "tank": classes.tankClass()
+    })
 
 if __name__ == "__main__":
     app.run(debug=True) 
