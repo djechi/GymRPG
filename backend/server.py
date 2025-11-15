@@ -10,6 +10,7 @@ client = Client(api_key=os.getenv("GEMINI_API_KEY"))
 def helloWorld():
     return "Hello World"
 
+# Tested in Postman and with 200 response
 @app.route("/test", methods=["POST"])
 def chatBot():
     message = request.json.get("message")
