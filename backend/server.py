@@ -30,5 +30,10 @@ def allClasses():
         "tank": classes.tankClass()
     })
 
+@app.route("/characterName", methods=["POST"])
+def characterName():
+    return jsonify({"Character Name": request.json.get("name")})
+
+
 if __name__ == "__main__":
     app.run(debug=True) 
