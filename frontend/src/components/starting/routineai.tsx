@@ -11,7 +11,7 @@ const Routineai = () => {
     }
 
     return(
-        <div className="flex flex-col h-[15vh] w-full items-center justify-center mt-[20vh] mb-[20vh]">
+        <div className="flex flex-col h-[15vh] w-full items-center justify-center mt-[25vh] mb-[20vh]">
           <div className= "h-[50vh] w-[100vh] mt-5 rounded-2xl">
             <input 
             value = {inputVal}
