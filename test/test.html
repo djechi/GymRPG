@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <button onclick="testFetch()">Test Fetch</button>
+    <div id="result"></div>
+    
+    <script>
+        async function testFetch() {
+            try {
+                const response = await fetch('http://localhost:5000/classes');
+                const data = await response.json();
+                document.getElementById('result').innerHTML = 'Success: ' + JSON.stringify(data);
+            } catch (error) {
+                document.getElementById('result').innerHTML = 'Error: ' + error;
+            }
+        }
+    </script>
+</body>
+</html>
