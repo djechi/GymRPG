@@ -18,7 +18,7 @@ def homePage():
         "Character Name": name,
         "Classes": {
             "Ranger": classes.rangerClass(),
-            "Thief": classes.theifClass(),
+            "Thief": classes.thiefClass(),
             "Warrior": classes.warriorClass(),
             "Tank": classes.tankClass()
         },
