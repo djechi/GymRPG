@@ -7,7 +7,7 @@ def rangerClass():
         "Description": "The Ranger is known for his endurance and stamina."
         "They prioritize cardio vascular activity with minimal time spent working out with weights "
     }
-def theifClass():
+def thiefClass():
     return{
         "Strength": 10,
         "Stamina": 50,
