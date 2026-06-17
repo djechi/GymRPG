@@ -1,8 +1,12 @@
-from flask import Flask
-from homePage import homeBP
+from contextlib import asynccontextmanager
+from fastapi import FastAPI
+from app.database import init_db
+from app.routers import users
 
-app = Flask(__name__)
-app.register_blueprint(homeBP)
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    await init_db()
+    yield
 
-if __name__ == "__main__":
-    app.run(debug=True)
+app = FastAPI(lifespan=lifespan)
+app.include_router(users.router)
