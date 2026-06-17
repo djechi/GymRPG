@@ -1,18 +1,27 @@
-
 "use client";
 
-import Startheader from "@/src/components/starting/startheader"
-import Name from "@/src/components/starting/name"
-import RoutineAI from "@/src/components/starting/routineai"
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
+import { getStoredUser } from "@/src/data/api";
+import loadingGif from "@/public/loadingRun.gif"
+import Image from "next/image";
 
-const Home = () => {
+export default function HomePage() {
+  const router = useRouter();
+
+  useEffect(() => {
+    const user = getStoredUser();
+    router.replace(user ? "/character" : "/login")
+  }, [router])
+
   return (
-    <>
-      <Startheader/>
-      <Name/>
-      <RoutineAI/>
-    </>
+    <div className="min-h-screen flex items-center justify-center">
+      <Image
+        src={loadingGif}
+        alt="LoadingChibi"
+        width={100}
+        height={100}
+      />
+    </div>
   );
 };
-
-export default Home;
